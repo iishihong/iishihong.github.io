@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="花都化妆学校提供专业的彩妆造型、美甲美睫、影视特效及皮肤管理培训。课程涵盖零基础到高阶进阶，名师一对一指导，小班授课，就业无忧。欢迎咨询报名。">
+    <meta name="keywords" content="花都化妆学校,化妆培训,广州美妆学校,化妆造型,美甲美睫培训,职业化妆师培训">
+    <title>花都化妆学校-专业彩妆造型与美业技能培训中心</title>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --secondary-color: #f8f9fa;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --border-color: #e9ecef;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: #fff !important;
+            padding: 10px 24px;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: #c2185b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(214, 51, 132, 0.3);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(214, 51, 132, 0.9), rgba(153, 27, 27, 0.85)), url('https://picsum.photos/seed/makeup/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #f8f9fa;
+        }
+
+        .btn-outline {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        /* 特性/优势 */
+        .features {
+            padding: 60px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* 课程介绍 */
+        .courses {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .course-card:hover {
+            box-shadow: var(--shadow);
+            border-color: transparent;
+        }
+
+        .course-img {
+            height: 200px;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .course-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-img img {
+            transform: scale(1.05);
+        }
+
+        .course-body {
+            padding: 25px;
+        }
+
+        .course-tag {
+            display: inline-block;
+            background-color: #fce4ec;
+            color: var(--primary-color);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .course-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .course-desc {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 20px;
+            height: 42px;
+            overflow: hidden;
+        }
+
+        .course-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding-top: 15px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .course-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* 师资力量 */
+        .faculty {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+        }
+
+        .faculty-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .teacher-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .teacher-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .teacher-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .teacher-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .teacher-title {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* 就业/学员案例 */
+        .gallery {
+            padding: 80px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: #fff;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 问答与联系方式 */
+        .contact-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .faq-list {
+            margin-top: 30px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-gray);
+            font-size: 14px;
+            padding-left: 10px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .contact-info-box {
+            background-color: var(--secondary-color);
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .info-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+
+        .info-text h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .info-text p {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c2c2c;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: #999;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #999;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #666;
+            font-size: 13px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 36px; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-layout { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero { height: 500px; text-align: center; }
+            .hero-content { margin: 0 auto; }
+            .hero-buttons { justify-content: center; }
+            .course-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <span>✦</span> 花都化妆学校
+            </a>
+            <nav class="nav-links">
+                <a href="#features">学校优势</a>
+                <a href="#courses">热门课程</a>
+                <a href="#faculty">名师团队</a>
+                <a href="#gallery">学员作品</a>
+                <a href="#contact" class="cta-btn">免费预约试听</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>从零基础到专业化妆师<br>成就你的美丽梦想</h1>
+                <p>花都化妆学校专注美业培训15年，提供一站式化妆造型教育。资深导师手把手教学，小班制实战演练，助你快速掌握潮流彩妆与影视特效技术。</p>
+                <div class="hero-buttons">
+                    <a href="#courses" class="btn btn-primary">查看课程表</a>
+                    <a href="#contact" class="btn btn-outline">在线咨询</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🎓</div>
+                        <h3>系统化教学体系</h3>
+                        <p>从基础护肤、底妆原理到高阶色彩搭配，课程设置科学严谨，适合零基础学员循序渐进学习。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">👩‍🏫</div>
+                        <h3>行业资深师资</h3>
+                        <p>教师团队均拥有5年以上实战经验，曾参与多场大型晚会、影视剧组及时尚秀场造型工作。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💄</div>
+                        <h3>真实项目实战</h3>
+                        <p>校内模拟影楼、剧组、T台场景，定期举办学员作品发布会，积累真实工作经验。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💼</div>
+                        <h3>就业创业扶持</h3>
+                        <p>毕业学员推荐至合作影楼、工作室及婚庆公司就业，提供开店指导与创业扶持服务。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="courses">
+            <div class="container">
+                <div class="section-header">
+                    <h2>热门美妆课程</h2>
+                    <p>根据不同职业规划，定制专属学习路径</p>
+                </div>
+                <div class="course-grid">
+                    <article class="course-card">
+                        <div class="course-img">
+                            <img src="https://picsum.photos/seed/makeup1/400/300" alt="职业化妆师全能班">
+                        </div>
+                        <div class="course-body">
+                            <span class="course-tag">热门推荐</span>
+                            <h3 class="course-title">职业化妆师全能班</h3>
+                            <p class="course-desc">全面学习日妆、晚宴妆、新娘妆、平面模特妆及舞台妆，适合零基础转行。</p>
+                            <div class="course-info">
+                                <span>学制：3个月</span>
+                                <span class="course-price">¥ 6,800</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="course-card">
+                        <div class="course-img">
+                            <img src="https://picsum.photos/seed/makeup2/400/300" alt="新娘跟妆速成班">
+                        </div>
+                        <div class="course-body">
+                            <span class="course-tag">高薪就业</span>
+                            <h3 class="course-title">新娘跟妆速成班</h3>
+                            <p class="course-desc">专注新娘妆、伴娘妆及跟妆流程，包含化妆工具使用与跟妆工作技巧。</p>
+                            <div class="course-info">
+                                <span>学制：1个月</span>
+                                <span class="course-price">¥ 3,800</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="course-card">
+                        <div class="course-img">
+                            <img src="https://picsum.photos/seed/makeup3/400/300" alt="影视特效与造型">
+                        </div>
+                        <div class="course-body">
+                            <span class="course-tag">专业进阶</span>
+                            <h3 class="course-title">影视特效与造型</h3>
+                            <p class="course-desc">学习伤效制作、老年妆、古装妆及特殊角色造型，适合从事影视剧组工作。</p>
+                            <div class="course-info">
+                                <span>学制：4个月</span>
+                                <span class="course-price">¥ 8,800</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="course-card">
+                        <div class="course-img">
+                            <img src="https://picsum.photos/seed/makeup4/400/300" alt="美甲美睫精品班">
+                        </div>
+                        <div class="course-body">
+                            <span class="course-tag">时尚美甲</span>
+                            <h3 class="course-title">美甲美睫精品班</h3>
+                            <p class="course-desc">系统学习美甲款式设计、光疗树脂制作及美睫嫁接技术，打造手部精致妆容。</p>
+                            <div class="course-info">
+                                <span>学制：1.5个月</span>
+                                <span class="course-price">¥ 4,200</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faculty Section -->
+        <section id="faculty" class="faculty">
+            <div class="container">
+                <div class="section-header">
+                    <h2>优秀师资团队</h2>
+                    <p>由行业大咖组成的教学团队，传授前沿美妆理念</p>
+                </div>
+                <div class="faculty-list">
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://picsum.photos/seed/teacher1/200/200" alt="李雪老师">
+                        </div>
+                        <h4 class="teacher-name">李雪</h4>
+                        <p class="teacher-title">首席化妆讲师 / 影视造型师</p>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://picsum.photos/seed/teacher2/200/200" alt="王芳老师">
+                        </div>
+                        <h4 class="teacher-name">王芳</h4>
+                        <p class="teacher-title">新娘跟妆总监 / 婚礼策划顾问</p>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://picsum.photos/seed/teacher3/200/200" alt="陈晨老师">
+                        </div>
+                        <h4 class="teacher-name">陈晨</h4>
+                        <p class="teacher-title">美甲艺术总监 / 时尚博主</p>
+                    </div>
+                    <div class="teacher-card">
+                        <div class="teacher-img">
+                            <img src="https://picsum.photos/seed/teacher4/200/200" alt="赵敏老师">
+                        </div>
+                        <h4 class="teacher-name">赵敏</h4>
+                        <p class="teacher-title">色彩搭配讲师 / 形象设计顾问</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2>学员作品展示</h2>
+                    <p>每一张作品都是努力的见证，见证你的蜕变</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art1/400/400" alt="新娘妆作品">
+                        <div class="gallery-overlay">
+                            <h4>梦幻韩式新娘</h4>
+                            <p>学员：张晓雅</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art2/400/400" alt="古风造型作品">
+                        <div class="gallery-overlay">
+                            <h4>清宫古风造型</h4>
+                            <p>学员：刘诗诗</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art3/400/400" alt="时尚平面作品">
+                        <div class="gallery-overlay">
+                            <h4>时尚杂志封面</h4>
+                            <p>学员：陈小美</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art4/400/400" alt="舞台妆作品">
+                        <div class="gallery-overlay">
+                            <h4>晚会舞台妆</h4>
+                            <p>学员：林小美</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & FAQ Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>咨询报名与常见问题</h2>
+                </div>
+                <div class="contact-layout">
+                    <div class="contact-info-box">
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="联系电话" required>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option value="">选择感兴趣的课程</option>
+                                    <option value="all">职业化妆师全能班</option>
+                                    <option value="bridal">新娘跟妆速成班</option>
+                                    <option value="film">影视特效与造型</option>
+                                    <option value="nails">美甲美睫精品班</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="4" placeholder="留言备注（可选）"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">提交咨询</button>
+                        </form>
+                    </div>
+                    <div class="faq-section">
+                        <h3>常见问题解答</h3>
+                        <div class="faq-list">
+                            <div class="faq-item">
+                                <div class="faq-question">没有任何基础可以学习吗？</div>
+                                <div class="faq-answer">完全可以。我们的职业化妆师全能班专门为零基础学员设计，从最基础的皮肤护理和色彩理论开始教学。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">课程包含实习机会吗？</div>
+                                <div class="faq-answer">是的，学校与多家影楼和婚庆公司有长期合作，优秀学员可申请校内实习或推荐就业。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">学制多久？可以插班吗？</div>
+                                <div class="faq-answer">不同课程学制不同，通常在1-4个月。如果您有一定基础，可咨询教务老师申请插班学习。</div>
+                            </div>
+                            <div class="faq-item">
+                                <div class="faq-question">提供住宿吗？</div>
+                                <div class="faq-answer">学校周边有配套公寓，可提供住宿推荐，也可协助寻找安全便捷的租房信息。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>花都化妆学校</h3>
+                    <p>致力于打造华南地区最专业、最权威的美妆教育机构。我们不仅传授化妆技术，更传递美的理念，帮助每一位学员实现职业梦想。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#features">学校优势</a></li>
+                        <li><a href="#courses">课程体系</a></li>
+                        <li><a href="#gallery">学员作品</a></li>
+                        <li><a href="#contact">在线报名</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门课程</h4>
+                    <ul>
+                        <li><a href="#">职业化妆师全能班</a></li>
+                        <li><a href="#">新娘跟妆速成班</a></li>
+                        <li><a href="#">影视特效与造型</a></li>
+                        <li><a href="#">美甲美睫精品班</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">地址：广州市花都区新华镇XX路XX号</a></li>
+                        <li><a href="#">电话：020-1234 5678</a></li>
+                        <li><a href="#">微信：huadumakeup</a></li>
+                        <li><a href="#">邮箱：contact@huadumakeup.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 花都化妆学校 版权所有. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+              </html>
