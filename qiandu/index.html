@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>千度-专业网络搜索引擎与信息聚合平台</title>
+    <meta name="description" content="千度为您提供全网实时搜索、热点新闻聚合、深度行业资讯及实用工具服务，致力于打造高效、精准的信息获取入口。">
+    <meta name="keywords" content="千度,搜索引擎,全网搜索,信息聚合,热点资讯,网络搜索">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --text-main: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 20px;
+            padding-right: 120px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            outline: none;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            bottom: 8px;
+            padding: 0 24px;
+            border-radius: 40px;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-btn:hover {
+            background-color: #d97706;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 32px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .section-more {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hot List */
+        .hot-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hot-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hot-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .hot-rank {
+            font-size: 1.2rem;
+            font-weight: 700;
+            width: 30px;
+            color: #9ca3af;
+            text-align: center;
+        }
+
+        .hot-rank.top-1 { color: #ef4444; }
+        .hot-rank.top-2 { color: #f59e0b; }
+        .hot-rank.top-3 { color: #f97316; }
+
+        .hot-content {
+            flex: 1;
+        }
+
+        .hot-title {
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .hot-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* News Cards */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .news-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .news-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #e5e7eb;
+        }
+
+        .news-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+
+        .news-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            color: var(--text-main);
+        }
+
+        .news-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .news-footer {
+            margin-top: auto;
+            font-size: 0.75rem;
+            color: #9ca3af;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .category-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .category-count {
+            background-color: #f3f4f6;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .tool-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            transition: all 0.2s;
+        }
+
+        .tool-item:hover {
+            border-color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        .tool-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .tool-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .tool-info p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: #d1d5db;
+            padding: 60px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #374151;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 12px 20px;
+            }
+
+            nav {
+                width: 100%;
+                order: 3;
+                margin-top: 12px;
+            }
+
+            nav ul {
+                justify-content: center;
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+
+            .header-actions {
+                display: none;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .search-btn {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="#" class="logo">
+            千度<span>搜索</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">热点</a></li>
+                <li><a href="#">视频</a></li>
+                <li><a href="#">图片</a></li>
+                <li><a href="#">更多</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-outline">登录</button>
+            <button class="btn btn-primary">发布</button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>发现世界的每一个角落</h1>
+        <p>千度为您提供全网实时、精准的搜索服务，涵盖新闻、百科、图片、视频及各类专业资料。</p>
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="输入关键词，开始探索..." aria-label="搜索">
+            <button class="search-btn">搜索</button>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Hot Topics -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">实时热点</h2>
+                    <a href="#" class="section-more">查看更多 ></a>
+                </div>
+                <div class="hot-list">
+                    <a href="#" class="hot-item">
+                        <span class="hot-rank top-1">1</span>
+                        <div class="hot-content">
+                            <div class="hot-title">全球科技峰会聚焦人工智能新突破</div>
+                            <div class="hot-meta">科技 · 2.3万热度</div>
+                        </div>
+                    </a>
+                    <a href="#" class="hot-item">
+                        <span class="hot-rank top-2">2</span>
+                        <div class="hot-content">
+                            <div class="hot-title">夏季健康饮食指南：营养师推荐食谱</div>
+                            <div class="hot-meta">健康 · 1.8万热度</div>
+                        </div>
+                    </a>
+                    <a href="#" class="hot-item">
+                        <span class="hot-rank top-3">3</span>
+                        <div class="hot-content">
+                            <div class="hot-title">新能源汽车市场持续升温，销量创新高</div>
+                            <div class="hot-meta">财经 · 1.5万热度</div>
+                        </div>
+                    </a>
+                    <a href="#" class="hot-item">
+                        <span class="hot-rank">4</span>
+                        <div class="hot-content">
+                            <div class="hot-title">城市公园改造计划启动，新增多个休闲区</div>
+                            <div class="hot-meta">本地 · 9800热度</div>
+                        </div>
+                    </a>
+                    <a href="#" class="hot-item">
+                        <span class="hot-rank">5</span>
+                        <div class="hot-content">
+                            <div class="hot-title">最新电影上映口碑评价汇总</div>
+                            <div class="hot-meta">娱乐 · 8600热度</div>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- News / Articles -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">精选资讯</h2>
+                    <a href="#" class="section-more">查看更多 ></a>
+                </div>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <img src="https://picsum.photos/seed/tech/400/250" alt="科技新闻配图" class="news-img">
+                        <div class="news-body">
+                            <span class="news-tag">前沿科技</span>
+                            <h3 class="news-title">量子计算在药物研发中的应用前景</h3>
+                            <p class="news-desc">随着量子计算技术的成熟，传统制药行业正迎来革命性的变化，新药研发周期有望大幅缩短。</p>
+                            <div class="news-footer">
+                                <span>3小时前</span>
+                                <span>阅读 5k+</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <img src="https://picsum.photos/seed/travel/400/250" alt="旅游新闻配图" class="news-img">
+                        <div class="news-body">
+                            <span class="news-tag">旅行攻略</span>
+                            <h3 class="news-title">2024年最值得去的十大隐秘海岛</h3>
+                            <p class="news-desc">避开人潮，寻找属于你的宁静。这份精选榜单为您揭晓那些未被过度开发的绝美海岛。</p>
+                            <div class="news-footer">
+                                <span>5小时前</span>
+                                <span>阅读 3.2k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <img src="https://picsum.photos/seed/finance/400/250" alt="财经新闻配图" class="news-img">
+                        <div class="news-body">
+                            <span class="news-tag">财经观察</span>
+                            <h3 class="news-title">数字货币监管政策解析</h3>
+                            <p class="news-desc">随着全球对数字资产监管的加强，投资者应如何调整策略以应对市场波动？专家为您深度解读。</p>
+                            <div class="news-footer">
+                                <span>8小时前</span>
+                                <span>阅读 1.8k</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="news-card">
+                        <img src="https://picsum.photos/seed/food/400/250" alt="美食新闻配图" class="news-img">
+                        <div class="news-body">
+                            <span class="news-tag">生活百科</span>
+                            <h3 class="news-title">自制健康饮品：低卡路里也能美味</h3>
+                            <p class="news-desc">炎炎夏日，一杯清爽的自制饮品是最佳选择。介绍三种简单易做的低卡配方。</p>
+                            <div class="news-footer">
+                                <span>12小时前</span>
+                                <span>阅读 9k+</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Category List -->
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title">热门分类</h3>
+                <ul class="category-list">
+                    <li><a href="#"><span>新闻资讯</span><span class="category-count">12万</span></a></li>
+                    <li><a href="#"><span>科技数码</span><span class="category-count">8.5万</span></a></li>
+                    <li><a href="#"><span>财经商业</span><span class="category-count">6.2万</span></a></li>
+                    <li><a href="#"><span>娱乐八卦</span><span class="category-count">15万</span></a></li>
+                    <li><a href="#"><span>健康养生</span><span class="category-count">4.1万</span></a></li>
+                    <li><a href="#"><span>教育学习</span><span class="category-count">9.8万</span></a></li>
+                </ul>
+            </div>
+
+            <!-- Useful Tools -->
+            <div class="sidebar-widget">
+                <h3 class="sidebar-title">实用工具</h3>
+                <div class="tools-grid">
+                    <a href="#" class="tool-item">
+                        <div class="tool-icon">📅</div>
+                        <div class="tool-info">
+                            <h4>日历</h4>
+                            <p>查看日期</p>
+                        </div>
+                    </a>
+                    <a href="#" class="tool-item">
+                        <div class="tool-icon">📏</div>
+                        <div class="tool-info">
+                            <h4>换算</h4>
+                            <p>单位转换</p>
+                        </div>
+                    </a>
+                    <a href="#" class="tool-item">
+                        <div class="tool-icon">🌐</div>
+                        <div class="tool-info">
+                            <h4>翻译</h4>
+                            <p>多语种互译</p>
+                        </div>
+                    </a>
+                    <a href="#" class="tool-item">
+                        <div class="tool-icon">🌡️</div>
+                        <div class="tool-info">
+                            <h4>天气</h4>
+                            <p>实时查询</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ad Placeholder -->
+            <div class="sidebar-widget" style="text-align: center; background: #e5e7eb; color: #6b7280; padding: 40px 20px;">
+                <p>广告位招商</p>
+                <p style="font-size: 0.8rem; margin-top: 8px;">合作热线：400-123-4567</p>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h3>关于千度</h3>
+            <p style="font-size: 0.9rem; color: #9ca3af;">千度致力于为用户提供快速、准确、全面的互联网信息服务。我们相信，信息的自由流动是推动社会进步的重要力量。</p>
+        </div>
+        <div class="footer-col">
+            <h3>产品服务</h3>
+            <ul>
+                <li><a href="#">全网搜索</a></li>
+                <li><a href="#">图片搜索</a></li>
+                <li><a href="#">视频搜索</a></li>
+                <li><a href="#">百科全书</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>帮助中心</h3>
+            <ul>
+                <li><a href="#">使用指南</a></li>
+                <li><a href="#">隐私政策</a></li>
+                <li><a href="#">用户协议</a></li>
+                <li><a href="#">意见反馈</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>联系我们</h3>
+            <ul>
+                <li>公司地址：中国·互联网大道888号</li>
+                <li>电子邮箱：contact@qiandu.com</li>
+                <li>客服热线：400-123-4567</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 千度搜索 Qiandu Search. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
