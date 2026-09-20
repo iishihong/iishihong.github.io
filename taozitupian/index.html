@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>桃子图片-高清自然摄影与唯美素材精选</title>
+    <meta name="description" content="本站提供海量高清桃子图片资源，涵盖自然摄影、艺术插画、高清壁纸及商用素材。支持按场景、风格和色彩筛选，满足摄影爱好者与设计师的多样化需求。">
+    <meta name="keywords" content="桃子图片,高清图片,自然摄影,水果摄影,素材下载,壁纸,摄影作品">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --primary-dark: #e05454;
+            --secondary-color: #feca57;
+            --text-main: #2d3436;
+            --text-secondary: #636e72;
+            --bg-body: #f9f9f9;
+            --bg-card: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #f1f2f6;
+            border-radius: 20px;
+            padding: 5px 15px;
+            align-items: center;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            outline: none;
+            padding: 5px;
+            width: 150px;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f0 0%, #fff 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 1px solid #eee;
+            background: var(--bg-card);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Gallery Grid */
+        .gallery-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 4px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            group: card;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image-wrapper {
+            position: relative;
+            padding-top: 75%; /* 4:3 Aspect Ratio */
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .card-image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .download-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 0;
+            background: #f4f6f8;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            display: none;
+            border-top: 1px solid #f1f1f1;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d3436;
+            color: #dfe6e9;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #b2bec3;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #636e72;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .search-bar {
+                display: none;
+            }
+            .filters {
+                gap: 10px;
+            }
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                🍑 <span>桃子图库</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">自然摄影</a>
+                <a href="#">美食特写</a>
+                <a href="#">艺术插画</a>
+                <a href="#">高清壁纸</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索图片...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>探索高清桃子图片世界</h1>
+                <p>汇聚全球摄影师的优质作品，为您呈现色彩鲜艳、质感细腻的桃子摄影素材。无论是自然摄影、美食设计还是日常壁纸，这里都能满足您的视觉需求。</p>
+                <div class="filters">
+                    <button class="filter-btn active">全部</button>
+                    <button class="filter-btn">自然风光</button>
+                    <button class="filter-btn">特写摄影</button>
+                    <button class="filter-btn">矢量插画</button>
+                    <button class="filter-btn">高分辨率</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <div class="container">
+                <h2 class="section-title">精选图集</h2>
+                <div class="gallery-grid">
+                    <!-- Item 1 -->
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/peach1/400/300" alt="阳光下的水蜜桃">
+                            <div class="card-overlay">
+                                <a href="#" class="download-btn">下载原图</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">阳光下的水蜜桃</h3>
+                            <div class="card-meta">
+                                <span>自然摄影</span>
+                                <span>4K</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 2 -->
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/peach2/400/300" alt="粉嫩桃子特写">
+                            <div class="card-overlay">
+                                <a href="#" class="download-btn">下载原图</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">粉嫩桃子特写</h3>
+                            <div class="card-meta">
+                                <span>微距摄影</span>
+                                <span>1080P</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 3 -->
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/peach3/400/300" alt="桃子与绿叶">
+                            <div class="card-overlay">
+                                <a href="#" class="download-btn">下载原图</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">桃子与绿叶</h3>
+                            <div class="card-meta">
+                                <span>自然风光</span>
+                                <span>4K</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 4 -->
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/peach4/400/300" alt="夏日桃子拼盘">
+                            <div class="card-overlay">
+                                <a href="#" class="download-btn">下载原图</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">夏日桃子拼盘</h3>
+                            <div class="card-meta">
+                                <span>美食摄影</span>
+                                <span>1080P</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 5 -->
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/peach5/400/300" alt="矢量桃子图标">
+                            <div class="card-overlay">
+                                <a href="#" class="download-btn">下载原图</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">矢量桃子图标</h3>
+                            <div class="card-meta">
+                                <span>矢量插画</span>
+                                <span>AI</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Item 6 -->
+                    <article class="card">
+                        <div class="card-image-wrapper">
+                            <img src="https://picsum.photos/seed/peach6/400/300" alt="水墨风格桃子">
+                            <div class="card-overlay">
+                                <a href="#" class="download-btn">下载原图</a>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">水墨风格桃子</h3>
+                            <div class="card-meta">
+                                <span>艺术插画</span>
+                                <span>PNG</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <h3>极速加载</h3>
+                        <p>采用智能CDN加速技术，确保图片加载速度快，浏览体验流畅。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎨</div>
+                        <h3>高清画质</h3>
+                        <p>所有图片均经过严格筛选，保证高分辨率与色彩还原度。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <h3>安全下载</h3>
+                        <p>无病毒、无弹窗干扰，支持多种格式下载，保障您的设备安全。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💡</div>
+                        <h3>创意灵感</h3>
+                        <p>海量素材库，为设计师、摄影师及博主提供源源不断的创作灵感。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">这些桃子图片可以商用吗？</div>
+                        <div class="faq-answer">
+                            我们提供多种授权类型的素材。部分图片为免费商用，部分需购买商业授权。请点击图片查看具体授权说明。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何获取最高清的版本？</div>
+                        <div class="faq-answer">
+                            在图片详情页中，您可以选择“下载原图”并勾选“4K”或“RAW”选项，即可获取最高分辨率的原始文件。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">支持哪些下载格式？</div>
+                        <div class="faq-answer">
+                            支持常见的 JPG、PNG、WEBP 以及矢量格式的 AI、SVG 文件，满足不同场景的使用需求。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于桃子图库</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源分类</h4>
+                    <ul>
+                        <li><a href="#">自然风光</a></li>
+                        <li><a href="#">美食摄影</a></li>
+                        <li><a href="#">矢量插画</a></li>
+                        <li><a href="#">高清壁纸</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">使用指南</a></li>
+                        <li><a href="#">会员服务</a></li>
+                        <li><a href="#">联系客服</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 桃子图片资源网 版权所有
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的筛选按钮交互逻辑
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                // 这里仅做视觉切换，实际项目需配合筛选逻辑
+                console.log('筛选类型切换为: ' + btn.textContent);
+            });
+        });
+
+        // FAQ 手风琴效果
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                // 关闭其他
+                faqItems.forEach(i => i.classList.remove('active'));
+                // 切换当前
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
